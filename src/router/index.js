@@ -1,0 +1,15 @@
+const express = require('express')
+const router = express.Router()
+const productRouter = require('./product')
+const categoryRouter = require('./category')
+const userRouter = require('./user')
+const multer = require('../middlewares/multer')
+// app.use('/products', productRouter)
+// app.use('/users', userRouter)
+router
+  .use('/product', productRouter)
+  .use('/user', userRouter)
+  .use('/category', categoryRouter)
+
+
+module.exports = router

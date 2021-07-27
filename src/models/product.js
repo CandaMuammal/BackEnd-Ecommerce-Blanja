@@ -2,7 +2,7 @@ const connection = require('../configs/db')
 
 const getAllProduct = (start, limit) => {
   return new Promise((resolve, reject) => {
-    connection.query(`SELECT name, price, color, size, category FROM product INNER JOIN category ON product.idCategory = category.idCategory ORDER BY createdAt DESC LIMIT ${start}, ${limit}`, (error, result) => {
+    connection.query(`SELECT * FROM product ORDER BY createdAt DESC LIMIT ${start}, ${limit}`, (error, result) => {
       if (!error) {
         resolve(result)
       } else { 

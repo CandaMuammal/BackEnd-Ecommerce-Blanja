@@ -8,7 +8,7 @@ const verifyAccess = (req, res, next) => {
     return next(error)
   }
   const result = token.split(' ')[1]
-  console.log(result);
+  console.log(result)
   jwt.verify(result, process.env.SECRET_KEY, function (err, decoded) {
     if (err) {
       if (err.name === 'TokenExpiredError') {
@@ -24,22 +24,21 @@ const verifyAccess = (req, res, next) => {
         error.status = 401
         return next(error)
       }
-
     }
     req.role = decoded.role
 
-    const requireAdmin = (request, response, next) => {
+    const requireAdmin = (req, response, next) => {
       if (req.role !== '1') {
-        response.json({ message: 'Access Denied' });
+        response.json({ message: 'Access Denied' })
+      } else {
+        next()
       }
-      else {
-        next();
-      }
-    };
-    
+    }
+
     next()
-  });
+  })
 }
 module.exports = {
+  verifyAccess,
   verifyAccess
 }

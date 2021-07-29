@@ -35,9 +35,22 @@ const responseDelete = (res, result, status, error, page) => {
   res.status(status).json(resultPrint)
 }
 
+const responseErr = (res, error) => {
+  const resultPrint = {}
+  // resultPrint.status = 'insert data success'
+  // resultPrint.statusCode = status
+  // resultPrint.data = result
+  resultPrint.error = error || null
+  res.json(resultPrint)
+}
+
+
+
+
 module.exports = {
   responseGet,
   responseInsert,
   responseUpdate,
-  responseDelete
+  responseDelete,
+  responseErr
 }

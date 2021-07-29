@@ -8,7 +8,9 @@ router
   // .post('/', userController.insertUser)
   // .put('/:id', userController.updateUser)
   // .delete('/:id', userController.deleteUser)
-    .post('/register', userController.register)
-    .post('/login', userController.login)
+  .post('/registerSeller', userController.registerSeller)
+  .post('/registerCustomer', userController.registerCustomer)
+  .post('/login', userController.login)
+  .post('/email', userController.sendEmail)
 
 module.exports = router

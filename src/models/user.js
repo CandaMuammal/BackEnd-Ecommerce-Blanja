@@ -1,16 +1,16 @@
 const connection = require('../configs/db')
 
 const insertUser = (data) => {
-    return new Promise((resolve, reject) => {
-      connection.query('INSERT INTO user SET ?', data, (error, result) => {
-        if (!error) {
-          resolve(result)
-        } else {
-          reject(error)
-        }
-      })
+  return new Promise((resolve, reject) => {
+    connection.query('INSERT INTO user SET ?', data, (error, result) => {
+      if (!error) {
+        resolve(result)
+      } else {
+        reject(error)
+      }
     })
-  }
+  })
+}
 
 const getAllUser = () => {
   return new Promise((resolve, reject) => {
@@ -26,7 +26,7 @@ const getAllUser = () => {
 
 const searchUser = (email) => {
   return new Promise((resolve, reject) => {
-    connection.query('SELECT * FROM user where email = ?', email,  (error, result) => {
+    connection.query('SELECT * FROM user where email = ?', email, (error, result) => {
       if (!error) {
         resolve(result)
       } else {
@@ -35,7 +35,6 @@ const searchUser = (email) => {
     })
   })
 }
-
 
 module.exports = {
   insertUser,

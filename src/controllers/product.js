@@ -1,8 +1,7 @@
 const productModel = require('../models/product')
 const helpers = require('../helpers/helper')
 const createError = require('http-errors')
-const path = require('path')
-const fs = require('fs')
+// const fs = require('fs')
 const redis = require('redis')
 const client = redis.createClient(6379)
 
@@ -10,11 +9,12 @@ const getAllProduct = (req, res, next) => {
   const page = req.query.page || 1
   const limit = req.query.limit || 5
   const start = (page - 1) * limit
+  const search = req.query.search
 
-  productModel.getAllProduct(start, limit)
+  productModel.getAllProduct(start, limit, search)
     .then((result) => {
       const product = result
-      client.setex('allProduct', 60*60, JSON.stringify(product))
+      client.setex('allProduct', 60 * 60, JSON.stringify(product))
       helpers.responseGet(res, product, 200, null, page)
     })
     .catch((error) => {
@@ -44,8 +44,8 @@ const getProductById = (req, res, next) => {
   const idProduct = req.params.id
   productModel.getProductById(idProduct)
     .then((result) => {
-      const product = result 
-      client.setex(`product/${idProduct}`, 60*60, JSON.stringify(product))
+      const product = result
+      client.setex(`product/${idProduct}`, 60 * 60, JSON.stringify(product))
       helpers.responseGet(res, product, 200, null)
     })
     .catch((error) => {
@@ -55,17 +55,17 @@ const getProductById = (req, res, next) => {
 }
 
 const insertProduct = (req, res, next) => {
-  const { name, price, color, size, idCategory, image,  stock, description} = req.body
+  const { name, price, color, size, idCategory, image, stock, description } = req.body
   const data = {
     name: name,
     price: price,
-    color: color, 
+    color: color,
     size: size,
     idCategory: idCategory,
     image: `http://localhost:4000/file/${req.file.filename}`,
     stock: stock,
     description,
-    createdAt: new Date(),
+    createdAt: new Date()
   }
 
   // fs.unlinkSync(`./images/${req.file.filename}`)
@@ -83,17 +83,17 @@ const insertProduct = (req, res, next) => {
 
 const updateProduct = (req, res) => {
   const id = req.params.id
-  const { name, price, color, size, idCategory, image,  stock, description} = req.body
+  const { name, price, color, size, idCategory, image, stock, description } = req.body
   const data = {
     name: name,
     price: price,
-    color: color, 
+    color: color,
     size: size,
     idCategory: idCategory,
     image: `http://localhost:4000/file/${req.file.filename}`,
     stock: stock,
     description,
-    createdAt: new Date(),
+    createdAt: new Date()
   }
   productModel.updateProduct(id, data)
     .then((result) => {

@@ -21,7 +21,7 @@ const images = multer({
   storage: storage,
   fileFilter: fileFilter,
   limits: {
-    fileSize: 20000
+    fileSize: 2000000
   }
 })
 

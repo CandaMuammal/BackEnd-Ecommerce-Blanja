@@ -2,6 +2,8 @@ const connection = require('../configs/db')
 
 const getAllProduct = (start, limit, search) => {
   return new Promise((resolve, reject) => {
+    console.log(limit)
+    console.log(start)
     connection.query(`SELECT * FROM product WHERE name LIKE '%${search}%' ORDER BY createdAt DESC LIMIT ${start}, ${limit}`, (error, result) => {
       if (!error) {
         resolve(result)
@@ -11,6 +13,18 @@ const getAllProduct = (start, limit, search) => {
     })
   })
 }
+
+// const getAllProduct = () => {
+//   return new Promise((resolve, reject) => {
+//     connection.query(`SELECT * FROM product `, (error, result) => {
+//       if (!error) {
+//         resolve(result)
+//       } else {
+//         reject(error)
+//       }
+//     })
+//   })
+// }
 
 const getAllProductByName = (start, limit, search) => {
   return new Promise((resolve, reject) => {

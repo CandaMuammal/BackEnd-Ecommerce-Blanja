@@ -78,6 +78,9 @@ const registerCustomer = async (req, res, next) => {
 const login = async (req, res, next) => {
   const { email, password, role } = req.body
   const result = await userModel.searchUser(email)
+  if (result.length < 1) {
+    return helpers.responseInsert(res, null, 401, { message: 'please enter the right email or password' })
+  }
   const user = result[0]
   bcrypt.compare(password, user.password, function (err, resCompare) {
     if (!resCompare) {
@@ -97,7 +100,7 @@ const sendEmail = async (req, res) => {
   const resEmail = await helperEmail.sendEmail()
   res.send({message: 'email sent successfully'})
   console.log(resEmail);
-}
+} 
 
 const getAllUser = (req, res, next) => {
   const page = req.query.page || 1

@@ -9,11 +9,16 @@ const getAllProduct = (req, res, next) => {
   const page = req.query.page || 1
   const limit = req.query.limit || 5
   const start = (page - 1) * limit
-  const search = req.query.search
+  const search = req.query.search || ""
 
+  console.log(start)
+  console.log(limit)
+  
   productModel.getAllProduct(start, limit, search)
     .then((result) => {
       const product = result
+      console.log(product)
+      
       client.setex('allProduct', 60 * 60, JSON.stringify(product))
       helpers.responseGet(res, product, 200, null, page)
     })

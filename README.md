@@ -11,7 +11,6 @@
 
 - [About](#about)
 - [Built With](#built-with)
-- [Packages](#packages)
 - [How To Install?](#how-to-install?)
 - [Screenshots](#screenshots)
 - [Authors](#authors)

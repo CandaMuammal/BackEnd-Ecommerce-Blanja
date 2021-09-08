@@ -1,4 +1,4 @@
-<!-- <p align="center">
+<p align="center">
      <img src="https://i.postimg.cc/QdVDVtTB/logo.png"   alt= border="0" />
 
 </p>
@@ -12,6 +12,7 @@
 - [About](#about)
 - [Packages](#Packages)
 - [Installation](#installation)
+- [Coffee Shop - Frontend](#coffee-shop---frontend)
 - [Endpoint](#endpoint)
 - [Authors](#authors)
 
@@ -68,6 +69,13 @@ npm install
 
 - Type ` npm start` To Start Website
 
+<br/>
+
+## Coffee Shop - Frontend
+
+:rocket: [`Front End Coffee Shop`](https://github.com/dwinovic/coffe-shop-next.git)
+
+<br/>
 
 ## Endpoint
 
@@ -142,10 +150,10 @@ npm install
 1. [Novi Dwi Cahya](https://github.com/dwinovic) - Frontend - Leader
 2. [Arya Irama Wahono](https://github.com/aryairama) - Full Stack - Member
 3. [Chandra Kurniawan](https://github.com/Chandra-Kurnia) - Backend - Member
-4. [Canda Muammal](https://github.com/CandaMuammal) - Frontend - Member -->
+4. [Canda Muammal](https://github.com/CandaMuammal) - Frontend - Member
 
 
-<p align="center">
+<!-- <p align="center">
      <img src="https://i.postimg.cc/QdVDVtTB/logo.png"   alt= border="0" />
 
 </p>
@@ -270,4 +278,4 @@ npm install
 1. [Novi Dwi Cahya](https://github.com/dwinovic) - Frontend - Leader
 2. [Arya Irama Wahono](https://github.com/aryairama) - Full Stack - Member
 3. [Chandra Kurniawan](https://github.com/Chandra-Kurnia) - Backend - Member
-4. [Canda Muammal](https://github.com/CandaMuammal) - Frontend - Member
+4. [Canda Muammal](https://github.com/CandaMuammal) - Frontend - Member -->

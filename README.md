@@ -46,7 +46,7 @@
     "uuid": "^8.3.2"
 
 
-## Instalation
+## Installation
 
 - Clone This Repo to your local
 

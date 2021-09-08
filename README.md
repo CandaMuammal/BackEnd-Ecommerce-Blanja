@@ -67,6 +67,17 @@ npm install
 
 ## Screenshots
 
+### Customer Page
+
+<p align="center">
+  <span>
+   <img src="https://i.postimg.cc/j59XtMP3/home.png"   alt= border="0" />
+   
+  </span>
+</p>
+
+### Admin Page
+
 <p align="center">
   <span>
    URL gambar

@@ -10,7 +10,7 @@
 ## Contents
 
 - [About](#about)
-- [Packeges](#Packages)
+- [Packages](#Packages)
 - [Installation](#installation)
 - [Screenshots](#screenshots)
 - [Authors](#authors)
@@ -32,7 +32,7 @@ Coffee Shop is a Foods & Beverages ordering application. This apps give you (cus
 - Styled Component
 
 
-#### Packages
+### Packages
     "@material-ui/core": "^4.12.3",
     "@material-ui/lab": "^4.0.0-alpha.60",
     "axios": "^0.21.1",

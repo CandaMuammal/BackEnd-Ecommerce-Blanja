@@ -5,11 +5,11 @@ const userModel = require('../models/user')
 const auth = require('./auth')
 
 const sellerRole = (req, res, next) => {
-  // console.log(req.data.role);
+  console.log(req.role);
   if (req.role === '1') {
     next()
   } else {
-    return helpers.responseErr(res, 'only user can add, delete, or update the product')
+    return helpers.responseErr(res, 'only seller can add, delete, or update the product')
   }
 }
 

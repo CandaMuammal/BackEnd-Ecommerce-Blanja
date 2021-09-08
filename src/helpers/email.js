@@ -31,7 +31,7 @@ const sendEmail = () => {
             //     <h3>klik <a href="http://localhost:4000/v1/category">disini</a> untuk melihat all category</h3>
             // </body>
             // </html>` // html body
-            html: `<h3>Thank you for registering. klik <a href="http://localhost:4000/v1/category">disini</a> untuk melihat all category</h3>`
+            html: `<h3>Thank you for registering. klik <a href="http://localhost:3000/login">disini</a> untuk login menggunakan aku yang telah terdaftar</h3>`
         });
         resolve(info)
     })

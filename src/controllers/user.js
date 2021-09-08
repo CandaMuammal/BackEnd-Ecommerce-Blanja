@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken')
 const helperEmail = require('../helpers/email')
 
 const registerSeller = async (req, res, next) => {
-  const { username, email, password, phoneNumber, role } = req.body
+  const { username, email, password, phoneNumber, role, storeName } = req.body
 
   const user = await userModel.searchUser(email)
   if (user.length > 0) {
@@ -23,6 +23,7 @@ const registerSeller = async (req, res, next) => {
         email: email,
         password: hash,
         phoneNumber: phoneNumber,
+        storeName: storeName,
         role: "1"
       }
 
@@ -117,7 +118,32 @@ const getAllUser = (req, res, next) => {
     })
 }
 
+const updateUser = (req, res) => {
+  const id = req.params.id
+  const { username, email, password, phoneNumber, storeName, role } = req.body
+  const data = {
+    username,
+    email,
+    password,
+    phoneNumber,
+    storeName,
+    role,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  }
+  userModel.updateUser(id, data)
+    .then((result) => {
+      const user = result
+      helpers.responseUpdate(res, user, 200, null)
+    })
+    .catch((error) => {
+      const err = new createError.InternalServerError()
+      helpers.responseUpdate(res, err, 400, null)
+    })
+}
+
 module.exports = {
+  updateUser,
   registerSeller,
   registerCustomer,
   login,
@@ -178,29 +204,7 @@ module.exports = {
 //     })
 // }
 
-// const updateUser = (req, res) => {
-//   const id = req.params.id
-//   const { username, email, password, phoneNumber, storeName, address } = req.body
-//   const data = {
-//     username,
-//     email,
-//     password,
-//     phoneNumber,
-//     storeName,
-//     address,
-//     createdAt: new Date(),
-//     updatedAt: new Date()
-//   }
-//   userModel.updateUser(id, data)
-//     .then((result) => {
-//       const user = result
-//       helpers.responseUpdate(res, user, 200, null)
-//     })
-//     .catch((error) => {
-//       const err = new createError.InternalServerError()
-//       next(err)
-//     })
-// }
+
 
 // const deleteUser = (req, res) => {
 //   const id = req.params.id

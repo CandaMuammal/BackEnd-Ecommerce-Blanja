@@ -7,17 +7,17 @@ const client = redis.createClient(6379)
 
 const getAllProduct = (req, res, next) => {
   const page = req.query.page || 1
-  const limit = req.query.limit || 5
+  const limit = req.query.limit || 10
   const start = (page - 1) * limit
   const search = req.query.search || ""
 
-  console.log(start)
-  console.log(limit)
+  // console.log(start)
+  // console.log(limit)
   
   productModel.getAllProduct(start, limit, search)
     .then((result) => {
       const product = result
-      console.log(product)
+      // console.log(product)
       
       client.setex('allProduct', 60 * 60, JSON.stringify(product))
       helpers.responseGet(res, product, 200, null, page)
@@ -49,7 +49,7 @@ const getProductById = (req, res, next) => {
   const idProduct = req.params.id
   productModel.getProductById(idProduct)
     .then((result) => {
-      const product = result
+      const product = result[0]
       client.setex(`product/${idProduct}`, 60 * 60, JSON.stringify(product))
       helpers.responseGet(res, product, 200, null)
     })
@@ -60,18 +60,20 @@ const getProductById = (req, res, next) => {
 }
 
 const insertProduct = (req, res, next) => {
-  const { name, price, color, size, idCategory, image, stock, description } = req.body
+  const { name, price, color, size, category, idCategory, image, stock, description } = req.body
   const data = {
     name: name,
     price: price,
-    color: color,
-    size: size,
-    idCategory: idCategory,
+    color,
+    size,
+    category,
+    idCategory: 1,
     image: `http://localhost:4000/file/${req.file.filename}`,
     stock: stock,
     description,
     createdAt: new Date()
   }
+  console.log(req.file.filename)
 
   // fs.unlinkSync(`./images/${req.file.filename}`)
 

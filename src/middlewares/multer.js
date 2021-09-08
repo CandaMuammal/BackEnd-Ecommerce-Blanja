@@ -18,6 +18,7 @@ const fileFilter = (req, file, cb) => {
 }
 
 const images = multer({
+
   storage: storage,
   fileFilter: fileFilter,
   limits: {

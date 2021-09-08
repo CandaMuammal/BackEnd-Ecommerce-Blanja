@@ -75,7 +75,7 @@ npm install
 
 |  METHOD  |             API             |                    ACTIONS                    |
 | :------: | :-------------------------: | :-------------------------------------------: |
-|  `POST`  |       /categories/addcategory       |      Add category       |
+|  `POST`  |       /categories/addcategory       |      add category       |
 |  `GET`  | /categories/getcategory |  get all categories  |
 |  `GET`  |        /categories/showcategory         |        show category     |
 |  `POST`  |   /categories/updatecategory/:id    | update category |
@@ -106,7 +106,7 @@ npm install
 
 |  METHOD  |             API             |                    ACTIONS                    |
 | :------: | :-------------------------: | :-------------------------------------------: |
-|  `POST`  |       /deliveries/adddeliveries       |      Add delivery       |
+|  `POST`  |       /deliveries/adddeliveries       |      add delivery       |
 |  `GET`  | /deliveries/getdeliveries |  get all deliveries  |
 |  `GET`  |        /deliveries/showdelivery         |        show delivery     |
 |  `POST`  |   /deliveries/updatedelivery/:id    | update delivery |
@@ -117,7 +117,7 @@ npm install
 
 |  METHOD  |             API             |                    ACTIONS                    |
 | :------: | :-------------------------: | :-------------------------------------------: |
-|  `POST`  |       /products/       |      Add products       |
+|  `POST`  |       /products/       |      add products       |
 |  `POST`  | /products/:id |  update products  |
 |  `DELETE`  |        /products/:id         |      delete products     |
 |  `GET`  |   /products/  | get all products |
@@ -129,7 +129,7 @@ npm install
 
 |  METHOD  |             API             |                    ACTIONS                    |
 | :------: | :-------------------------: | :-------------------------------------------: |
-|  `POST`  |       /sizes/addsizes       |      Add size       |
+|  `POST`  |       /sizes/addsizes       |      add size       |
 |  `GET`  | /sizes/getsizes |  get all sizes  |
 |  `GET`  |        /sizes/showsize         |        show size     |
 |  `POST`  |   /sizes/updatesize/:id    | update size |

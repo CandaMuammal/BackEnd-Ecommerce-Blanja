@@ -138,6 +138,9 @@ npm install
 
 <p align="center">
   <span>
-
+   <img src="https://i.postimg.cc/MTSm3n0X/newproduct.png"   alt= border="0" /> <br/><br/><br/><br/>
+   <img src="https://i.postimg.cc/pr0Qdkwn/orderadmin.png"   alt= border="0" /> <br/><br/><br/><br/>
+   <img src="https://i.postimg.cc/Kc9tBqW1/productadmin.png"   alt= border="0" /> <br/><br/><br/><br/>
+   <img src="https://i.postimg.cc/C1xzKYSm/dashboard.png"   alt= border="0" /> <br/><br/><br/><br/>
   </span>
 </p>

@@ -10,8 +10,8 @@
 ## Contents
 
 - [About](#about)
-- [Built With](#built-with)
-- [How To Install?](#how-to-install?)
+- [Packeges](#Packages)
+- [Installation](#installation)
 - [Screenshots](#screenshots)
 - [Authors](#authors)
 
@@ -22,8 +22,9 @@ Coffee Shop is a Foods & Beverages ordering application. This apps give you (cus
 </p>
 
 
-##  Build With
+##  Packages
 
+### Built With
 - ReactJs
 - Redux
 - NextJs
@@ -58,7 +59,7 @@ Coffee Shop is a Foods & Beverages ordering application. This apps give you (cus
     "yup": "^0.32.9"
 
 
-##  How To Install?
+##  Installation
 
 - Clone This Front End Repo
 

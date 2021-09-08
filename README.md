@@ -1,79 +1,75 @@
 <p align="center">
-     <img src="https://i.postimg.cc/WpmxhFCx/zwallet6.png"   alt= border="0" />
+     <img src="https://i.postimg.cc/QdVDVtTB/logo.png"   alt= border="0" />
 
 </p>
 
 
 ---
 
+
+## Contents
+
+- [About](#about)
+- [Built With](#built-with)
+- [Packages](#packages)
+- [How To Install?](#installation)
+- [Screenshots](#screenshots)
+- [Authors](#authors)
+
 ##  About
 
-Zwallet is a digital wallet apps that will really helps you to manage your e-money. Using Zwallet you'll be allowed to do some transaction with only a few taps on your screen. In other words, with this apps you can easily save money, transfer it to other, and also top up some moneys and add them to your Zwallet's balance.
+Coffee Shop is a Foods & Beverages ordering application. This apps give you (customers) some features to order your favorite foods or beverages. The customers also have some opportunity to use some promo code before directly checkout to the payment page. In payment page you can pick your payments method so it's flexible what kind of money do you have. Also the customers will be able to edit their profile such as photo, username, address, and phone number if they have to change their identity. 
+
 
 ##  Build With
 
 - ReactJs
 - Redux
-- ExpressJs
-- NodeJs
-- MySQL
-- JWT
+- NextJs
+- JavaScript
+- Styled Component
 
-#### Packages (Backend)
-    "bcryptjs": "^2.4.3",
-    "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "express-fileupload": "^1.2.1",
-    "http-errors": "^1.8.0",
-    "jsonwebtoken": "^8.5.1",
-    "morgan": "^1.10.0",
-    "multer": "^1.4.2",
-    "mysql2": "^2.3.0",
-    "nodemailer": "^6.6.3",
-    "nodemon": "^2.0.9",
-    "redis": "^3.1.2",
-    "uuid": "^8.3.2",
-    "xendit-node": "^1.14.0"
 
-#### Packages (Frontend)
+#### Packages
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/lab": "^4.0.0-alpha.60",
     "axios": "^0.21.1",
-    "bootstrap": "^5.0.2",
-    "chart.js": "^3.5.0",
-    "jspdf": "^2.3.1",
+    "formik": "^2.2.9",
+    "js-cookie": "^3.0.1",
+    "next": "11.1.2",
+    "nextjs-progressbar": "0.0.11",
     "prop-types": "^15.7.2",
-    "react": "^17.0.2",
-    "react-bootstrap": "^2.0.0-beta.4",
-    "react-chartjs-2": "^3.0.4",
-    "react-dom": "^17.0.2",
-    "react-hook-form": "^7.12.2",
-    "react-pin-input": "^1.0.1",
+    "rc-pagination": "^3.1.9",
+    "react": "17.0.2",
+    "react-datepicker": "^4.2.1",
+    "react-dom": "17.0.2",
     "react-redux": "^7.2.4",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "react-toastify": "^7.0.4",
-    "redux-logger": "^3.0.6",
+    "react-toastify": "^8.0.2",
+    "redux": "^4.1.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-persist": "^6.0.0",
+    "redux-persist-cookie-storage": "^1.0.0",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^5.3.0",
+    "socket.io-client": "^4.2.0",
+    "styled-components": "^5.3.1",
     "styled-media-query": "^2.1.2",
-    "web-vitals": "^1.0.1"
+    "sweetalert": "^2.1.2",
+    "yup": "^0.32.9"
 
 
 ##  How To Install?
 
-- Clone These 2 Repos (Backend and Frontend)
+- Clone This Front End Repo
 
 ```
-git clone https://github.com/19damah23/Backend-mWallet
-git clone https://github.com/dwinovic/zwallet
+git clone https://github.com/dwinovic/coffe-shop-next.git
 
 ```
 
 - Go To Folder Repo
 
 ```
-cd zwallet-frontend
-cd Backend-mWallet
+cd coffe-shop-next
 ```
 
 - Install Module
@@ -82,42 +78,7 @@ cd Backend-mWallet
 npm install
 ```
 
-- Type ` npm start` To Start Website
-
-
-## API_URL Endpoint
-
-#### Auth Endpoint
-
-|  METHOD  |             API             |                    ACTIONS                    |
-| :------: | :-------------------------: | :-------------------------------------------: |
-|  `POST`  |       /auth/register       |      Register user       |
-|  `GET`  | /auth/activate/:token |  Activation email and get token from email  |
-|  `POST`  |        /auth/login         |        Sign in with your verified account        |
-|  `POST`  |   /auth/setpin/:id    | Set pin for further transactions |
-
-
-#### Users Endpoint
-
-|  METHOD  |             API             |                    ACTIONS                    |
-| :------: | :-------------------------: | :-------------------------------------------: |
-|  `GET`   |       /users/:id       |              Get user by id             |
-|  `GET`   |           /users            |               Get all users             |
-|  `PATCH`   |       /users/:id       |              Edit phone number              |
-|  `PATCH`   |       /users/avatar/:id       |              Edit avatar by id             |
-|  `PATCH`   |       /users/password/:email       |              Edit password by email              |
-| `DELETE` |       /users/:id        |             Delete user by id           |
-
-
-#### Transaction Endpoint
-
-|  METHOD  |       API        |          ACTIONS           |
-| :------: | :--------------: | :------------------------: |
-|  `POST`  |    /transactions    | Transfer money |
-|  `GET`   | /transactions/history/:userId|    Get list transactions  |
-|  `GET`   | /transactions/:userId |    Get transactions detail    |
-|  `POST`   | /transactions/addvirtualacount/:userId |    Create virtual account    |
-|  `POST`   | /transactions/topup |    Topup money    |
+- Type ` npm run dev` To Start Website
 
 
 ## Screenshots
@@ -144,3 +105,11 @@ npm install
    <img src="https://i.postimg.cc/C1xzKYSm/dashboard.png"   alt= border="0" /> <br/><br/><br/><br/>
   </span>
 </p>
+
+
+## Authors
+
+1. [Novi Dwi Cahya](https://github.com/herzaparam) - Frontend - Leader
+2. [Arya Irama Wahono](https://github.com/aryairama) - Full Stack - Member
+3. [Chandra Kurniawan](https://github.com/Chandra-Kurnia) - Backend - Member
+4. [Canda Muammal](https://github.com/CandaMuammal) - Frontend - Member

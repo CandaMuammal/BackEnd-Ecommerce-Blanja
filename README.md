@@ -109,7 +109,7 @@ npm install
 
 ## Authors
 
-1. [Novi Dwi Cahya](https://github.com/herzaparam) - Frontend - Leader
+1. [Novi Dwi Cahya](https://github.com/dwinovic) - Frontend - Leader
 2. [Arya Irama Wahono](https://github.com/aryairama) - Full Stack - Member
 3. [Chandra Kurniawan](https://github.com/Chandra-Kurnia) - Backend - Member
 4. [Canda Muammal](https://github.com/CandaMuammal) - Frontend - Member

@@ -12,7 +12,7 @@
 - [About](#about)
 - [Packages](#Packages)
 - [Installation](#installation)
-- [Endpoin](#endpoint)
+- [Endpoint](#endpoint)
 - [Authors](#authors)
 
 ##  About

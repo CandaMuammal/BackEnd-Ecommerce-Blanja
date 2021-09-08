@@ -126,13 +126,11 @@ npm install
 
 <p align="center">
   <span>
-   <img src="https://i.postimg.cc/cCjZ0GLg/home.png"   alt= border="0" /> <br/>
-   <img src="https://i.postimg.cc/pr8xW1hs/login.png"   alt= border="0" /> <br/>
-   <img src="https://i.postimg.cc/Ghwd7rVV/product.png"   alt= border="0" /> <br/>
-   <img src="https://i.postimg.cc/rwqcTj89/detail.png"   alt= border="0" /> <br/>
-   <img src="https://i.postimg.cc/43dg73H7/payment.png"   alt= border="0" /> <br/>
-   <img src="https://i.postimg.cc/qqfV5Xby/history.png"   alt= border="0" /> <br/>
-   <img src="https://i.postimg.cc/jqNrJm2X/profile.png"   alt= border="0" /> <br/>
+   <img src="https://i.postimg.cc/cCjZ0GLg/home.png"   alt= border="0" /> <br/><br/><br/><br/>
+   <img src="https://i.postimg.cc/pr8xW1hs/login.png"   alt= border="0" /> <br/><br/><br/><br/>
+   <img src="https://i.postimg.cc/Ghwd7rVV/product.png"   alt= border="0" /> <br/><br/><br/><br/>
+   <img src="https://i.postimg.cc/43dg73H7/payment.png"   alt= border="0" /> <br/><br/><br/><br/>
+   <img src="https://i.postimg.cc/jqNrJm2X/profile.png"   alt= border="0" /> <br/><br/><br/><br/>
   </span>
 </p>
 

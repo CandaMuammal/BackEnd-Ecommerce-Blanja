@@ -1,12 +1,15 @@
 const express = require('express')
 const router = express.Router()
 const userController = require('../controllers/user')
+const images = require('../middlewares/multer')
+
 
 router
   .get('/', userController.getAllUser)
   // .get('/:id', userController.getUserById)
   // .post('/', userController.insertUser)
-  .put('/:id', userController.updateUser)
+  // .put('/:id', userController.updateUser)
+  .put('/:id', images.single('image'), userController.updateUser)
   // .delete('/:id', userController.deleteUser)
   .post('/registerSeller', userController.registerSeller)
   .post('/registerCustomer', userController.registerCustomer)

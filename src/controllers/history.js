@@ -32,18 +32,19 @@ const getHistoryById = (req, res, next) => {
 }
 
 const insertHistory = (req, res, next) => {
-  const { name, category, price, qty, totalPrice, address, paymentMethod } = req.body
+  const { name, category, price, qty, totalPrice, address, paymentMethod , username} = req.body
   const data = {
-    id: uuidv4(),
+    // id: uuidv4(),
     name,
-    category,
+    // category,
     price,
     qty,
-    totalPrice,
-    address,
-    paymentMethod,
-    createdAt: new Date(),
-    updatedAt: new Date()
+    username
+    // totalPrice,
+    // address,
+    // paymentMethod,
+    // createdAt: new Date(),
+    // updatedAt: new Date()
   }
 
   historyModel.insertHistory(data)

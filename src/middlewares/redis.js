@@ -12,6 +12,7 @@ const hitCacheAllProduct = (req, res, next) => {
       next()
     }
   })
+ 
 }
 const hitCacheProductId = (req, res, next) => {
   const id = req.params.id

@@ -58,7 +58,7 @@ const registerCustomer = async (req, res, next) => {
         username: username,
         email: email,
         password: hash,
-        phoneNumber: phoneNumber,
+        phoneNumber: 0,
         role: "2"
       }
 
@@ -120,16 +120,16 @@ const getAllUser = (req, res, next) => {
 
 const updateUser = (req, res) => {
   const id = req.params.id
-  const { username, email, password, phoneNumber, storeName, role } = req.body
+  const { username, email, phoneNumber, storeName, image, address, birthdate } = req.body
+  console.log(req.file)
   const data = {
     username,
     email,
-    password,
     phoneNumber,
     storeName,
-    role,
-    createdAt: new Date(),
-    updatedAt: new Date()
+    address,
+    birthdate,
+    image: `http://localhost:4000/file/${req.file.filename}`
   }
   userModel.updateUser(id, data)
     .then((result) => {

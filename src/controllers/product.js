@@ -90,13 +90,14 @@ const insertProduct = (req, res, next) => {
 
 const updateProduct = (req, res) => {
   const id = req.params.id
-  const { name, price, color, size, idCategory, image, stock, description } = req.body
+  const { name, price, color, size, idCategory, image, stock, description, category } = req.body
   const data = {
     name: name,
     price: price,
     color: color,
     size: size,
     idCategory: idCategory,
+    category,
     image: `http://localhost:4000/file/${req.file.filename}`,
     stock: stock,
     description,

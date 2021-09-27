@@ -3,7 +3,7 @@ const router = express.Router()
 const productController = require('../controllers/product')
 const images = require('../middlewares/multer')
 const auth = require('../middlewares/auth')
-const redisCache = require('../middlewares/redis')
+// const redisCache = require('../middlewares/redis')
 const role = require('../middlewares/role')
 
 router

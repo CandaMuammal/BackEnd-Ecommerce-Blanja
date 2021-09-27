@@ -2,8 +2,8 @@ const productModel = require('../models/product')
 const helpers = require('../helpers/helper')
 const createError = require('http-errors')
 // const fs = require('fs')
-const redis = require('redis')
-const client = redis.createClient(6379)
+// const redis = require('redis')
+// const client = redis.createClient(6379)
 
 const getAllProduct = (req, res, next) => {
   const page = req.query.page || 1
@@ -19,7 +19,7 @@ const getAllProduct = (req, res, next) => {
       const product = result
       // console.log(product)
       
-      client.setex('allProduct', 60 * 60, JSON.stringify(product))
+      // client.setex('allProduct', 60 * 60, JSON.stringify(product))
       helpers.responseGet(res, product, 200, null, page)
     })
     .catch((error) => {
@@ -50,7 +50,7 @@ const getProductById = (req, res, next) => {
   productModel.getProductById(idProduct)
     .then((result) => {
       const product = result[0]
-      client.setex(`product/${idProduct}`, 60 * 60, JSON.stringify(product))
+      // client.setex(`product/${idProduct}`, 60 * 60, JSON.stringify(product))
       helpers.responseGet(res, product, 200, null)
     })
     .catch((error) => {

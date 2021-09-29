@@ -78,23 +78,25 @@ const registerCustomer = async (req, res, next) => {
 
 const login = async (req, res, next) => {
   const { email, password, role } = req.body
-  const result = await userModel.searchUser(email)
-  if (result.length < 1) {
-    return helpers.responseInsert(res, null, 401, { message: 'please enter the right email or password' })
-  }
-  const user = result[0]
-  bcrypt.compare(password, user.password, function (err, resCompare) {
-    if (!resCompare) {
-      return helpers.responseInsert(res, null, 401, { message: 'please enter the right password' })
-    }
-    jwt.sign({ email: user.email, role: user.role }, process.env.SECRET_KEY, { expiresIn: '1h' }, function (err, token) {
-      // console.log(token);
-      // console.log(process.env.SECRET_KEY);
-      delete user.password
-      user.token = token
-      helpers.responseInsert(res, user, 200)
-    })
-  })
+  // const result = await userModel.searchUser(email)
+  // if (result.length < 1) {
+  //   return helpers.responseInsert(res, null, 401, { message: 'please enter the right email or password' })
+  // }
+  // const user = result[0]
+  // bcrypt.compare(password, user.password, function (err, resCompare) {
+  //   if (!resCompare) {
+  //     return helpers.responseInsert(res, null, 401, { message: 'please enter the right password' })
+  //   }
+  //   jwt.sign({ email: user.email, role: user.role }, process.env.SECRET_KEY, { expiresIn: '1h' }, function (err, token) {
+  //     // console.log(token);
+  //     // console.log(process.env.SECRET_KEY);
+  //     delete user.password
+  //     user.token = token
+  //     helpers.responseInsert(res, user, 200)
+  //   })
+  // })
+      helpers.responseInsert(res, {username: 'tes'}, 200)
+
 }
 
 const sendEmail = async (req, res) => {

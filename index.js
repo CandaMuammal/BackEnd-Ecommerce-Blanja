@@ -21,9 +21,9 @@ const PORT = process.env.PORT
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(morgan('dev'))
-app.use(cors(setCors))
+app.use(cors())
 
-// app.use(setCors())
+app.use(setCors())
 
 // app.use(morgan('dev'))
 

@@ -21,16 +21,10 @@ const PORT = process.env.PORT
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(morgan('dev'))
-app.use(cors())
+app.use(cors(setCors))
 
-app.use(setCors())
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*')
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE') // If needed
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type') // If needed
-  res.setHeader('Access-Control-Allow-Credentials', true) // If needed
-  next()
-})
+// app.use(setCors())
+
 // app.use(morgan('dev'))
 
 app.use('/v1', router)

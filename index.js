@@ -13,6 +13,7 @@ const setCors = require('./src/middlewares/cors')
 const createError = require('http-errors')
 const { route } = require('./src/router/product')
 const router = require('./src/router')
+const PORT = process.env.PORT
 
 
 
@@ -54,6 +55,6 @@ app.use((err, req, res, next) => {
   })
 })
 
-app.listen(4000, () => {
-  console.log('server is running on port 4000')
+app.listen(PORT, () => {
+  console.log( `server is running on port ${PORT}`)
 })

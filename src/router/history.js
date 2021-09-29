@@ -4,7 +4,7 @@ const historyController = require('../controllers/history')
 
 router
   .get('/', historyController.getAllHistory)
-  .get('/:id', historyController.getHistoryById)
+  .get('/:username', historyController.getHistoryById)
   .post('/', historyController.insertHistory)
   .put('/:id', historyController.updateHistory)
   .delete('/:id', historyController.deleteHistory)

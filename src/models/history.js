@@ -12,9 +12,9 @@ const getAllHistory = (start, limit) => {
   })
 }
 
-const getHistoryById = (id) => {
+const getHistoryById = (username) => {
   return new Promise((resolve, reject) => {
-    connection.query('SELECT * FROM history WHERE id = ?', id, (error, result) => {
+    connection.query('SELECT * FROM history WHERE username = ?', username, (error, result) => {
       if (!error) {
         resolve(result)
       } else {

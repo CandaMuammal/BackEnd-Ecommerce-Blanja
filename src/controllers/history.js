@@ -19,7 +19,7 @@ const getAllHistory = (req, res, next) => {
 }
 
 const getHistoryById = (req, res, next) => {
-  const idHistory = req.params.id
+  const idHistory = req.params.username
   historyModel.getHistoryById(idHistory)
     .then((result) => {
       const history = result

@@ -135,9 +135,9 @@ const getAllUser = (req, res, next) => {
 const updateUser = async (req, res) => {
   const id = req.params.id
   const { username, email, phoneNumber, storeName, image, address, birthdate } = req.body
-
-  const fileUpload = req.file;
   console.log(req.file)
+  const fileUpload = req.file;
+  
 
   const images = [];
   const { path } = fileUpload;
@@ -149,13 +149,11 @@ const updateUser = async (req, res) => {
     email,
     phoneNumber,
     storeName,
-    address,
-    birthdate,
+    // address,
+    // birthdate,
     image: toStr,
   }
 
-  
-  
   userModel.updateUser(id, data)
     .then((result) => {
       const user = result

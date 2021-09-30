@@ -5,6 +5,12 @@ const { v4: uuidv4 } = require('uuid')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const helperEmail = require('../helpers/email')
+const cloudinary = require('cloudinary').v2;
+const { configCloudinary } = require('../middlewares/cloudinary');
+const path = require("path");
+const { images } = require('../middlewares/multer')
+
+cloudinary.config(configCloudinary);
 
 const registerSeller = async (req, res, next) => {
   const { username, email, password, phoneNumber, role, storeName } = req.body
@@ -129,7 +135,15 @@ const getAllUser = (req, res, next) => {
 const updateUser = (req, res) => {
   const id = req.params.id
   const { username, email, phoneNumber, storeName, image, address, birthdate } = req.body
+
+  const fileUpload = req.file;
   console.log(req.file)
+
+  const images = [];
+  const { path } = fileUpload;
+  images.push(path);
+
+  const toStr = await images.toString();
   const data = {
     username,
     email,
@@ -137,8 +151,11 @@ const updateUser = (req, res) => {
     storeName,
     address,
     birthdate,
-    image: `http://localhost:4000/file/${req.file.filename}`
+    image: toStr,
   }
+
+  
+  
   userModel.updateUser(id, data)
     .then((result) => {
       const user = result

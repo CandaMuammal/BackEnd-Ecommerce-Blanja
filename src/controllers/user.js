@@ -132,7 +132,7 @@ const getAllUser = (req, res, next) => {
     })
 }
 
-const updateUser = (req, res) => {
+const updateUser = async (req, res) => {
   const id = req.params.id
   const { username, email, phoneNumber, storeName, image, address, birthdate } = req.body
 

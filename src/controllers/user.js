@@ -165,8 +165,42 @@ const updateUser = async (req, res) => {
     })
 }
 
+const updateUserCustomer = async (req, res) => {
+  const id = req.params.id
+  const { username, email, phoneNumber, storeName, image, address, birthdate } = req.body
+  console.log(req.file)
+  const fileUpload = req.file;
+  
+
+  const images = [];
+  const { path } = fileUpload;
+  images.push(path);
+
+  const toStr = await images.toString();
+  const data = {
+    username,
+    email,
+    phoneNumber,
+    // storeName,
+    address,
+    birthdate,
+    image: toStr,
+  }
+
+  userModel.updateUserCustomer(id, data)
+    .then((result) => {
+      const user = result
+      helpers.responseUpdate(res, user, 200, null)
+    })
+    .catch((error) => {
+      const err = new createError.InternalServerError()
+      helpers.responseUpdate(res, err, 400, null)
+    })
+}
+
 module.exports = {
   updateUser,
+  updateUserCustomer,
   registerSeller,
   registerCustomer,
   login,

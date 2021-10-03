@@ -167,7 +167,7 @@ const updateUser = async (req, res) => {
 
 const updateUserCustomer = async (req, res) => {
   const id = req.params.id
-  const { username, email, phoneNumber, storeName, image, address, birthdate } = req.body
+  const { username, email, phoneNumber, image, address, birthdate } = req.body
   console.log(req.file)
   const fileUpload = req.file;
   

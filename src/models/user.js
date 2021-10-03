@@ -48,11 +48,24 @@ const updateUser = (id, data) => {
   })
 }
 
+const updateUserCustomer = (id, data) => {
+  return new Promise((resolve, reject) => {
+    connection.query('UPDATE user SET ? WHERE id = ?', [data, id], (error, result) => {
+      if (!error) {
+        resolve(result)
+      } else {
+        reject(error)
+      }
+    })
+  })
+}
+
 module.exports = {
   insertUser,
   searchUser,
   getAllUser,
-  updateUser
+  updateUser,
+  updateUserCustomer
 }
 // const connection = require('../configs/db')
 

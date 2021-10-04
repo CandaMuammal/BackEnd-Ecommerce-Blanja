@@ -148,9 +148,9 @@ const updateUser = async (req, res) => {
     username,
     email,
     phoneNumber,
-    storeName,
-    // address,
-    // birthdate,
+    storeName: storeName || "",
+    address: address || "",
+    birthdate: birthdate || "",
     image: toStr,
   }
 

@@ -191,9 +191,12 @@ const updateUserCustomer = async (req, res) => {
   }
 
   userModel.updateUserCustomer(id, data)
-    .then((result) => {
-      const user = result
-      helpers.responseUpdate(res, user, 200, null)
+    .then(() => {
+      res.json({
+        data
+      })
+      // const user = result
+      // helpers.responseUpdate(res, user, 200, null)
     })
     .catch((error) => {
       const err = new createError.InternalServerError()

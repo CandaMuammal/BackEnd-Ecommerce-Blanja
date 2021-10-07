@@ -23,7 +23,7 @@ const responseUpdate = (res, result, status, error, page) => {
   resultPrint.statusCode = status
   resultPrint.data = result
   resultPrint.error = error || null
-  res.status(status).json(result)
+  res.status(status).json(resultPrint)
 }
 
 const responseDelete = (res, result, status, error, page) => {

@@ -23,10 +23,7 @@ const responseUpdate = (res, result, status, error, page) => {
   resultPrint.statusCode = status
   resultPrint.data = result
   resultPrint.error = error || null
-  res.status(status).json({
-    // status: statusCode === 200,
-    message,
-    data,})
+  res.status(status).json(result)
 }
 
 const responseDelete = (res, result, status, error, page) => {

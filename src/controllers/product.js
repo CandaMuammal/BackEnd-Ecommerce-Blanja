@@ -1,14 +1,14 @@
 const productModel = require('../models/product')
 const helpers = require('../helpers/helper')
 const createError = require('http-errors')
+
+// const fs = require('fs')
+// const redis = require('redis')
+// const client = redis.createClient(6379)
 const cloudinary = require('cloudinary').v2;
 const { configCloudinary } = require('../middlewares/cloudinary');
 const path = require("path");
 const { images } = require('../middlewares/multer')
-// const fs = require('fs')
-// const redis = require('redis')
-// const client = redis.createClient(6379)
-
 cloudinary.config(configCloudinary);
 
 const getAllProduct = (req, res, next) => {

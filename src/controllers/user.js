@@ -134,16 +134,25 @@ const getAllUser = (req, res, next) => {
 
 const updateUser = async (req, res) => {
   const id = req.params.id
+  let avatar = ""
+  // let ava = ""
+  let fileUpload = ""
+  let toStr = ""
+
   const { username, email, phoneNumber, storeName, image, address, birthdate } = req.body
-  console.log(req.file)
-  const fileUpload = req.file;
-  
+  // console.log(req.file)
 
-  const images = [];
-  const { path } = fileUpload;
-  images.push(path);
 
-  const toStr = await images.toString();
+  if (!req.file) {
+    fileUpload = ""
+  } else {
+    fileUpload = req.file;
+    const images = [];
+    const { path } = fileUpload;
+    images.push(path);
+    toStr = await images.toString()
+  }
+
   const data = {
     username,
     email,
@@ -151,7 +160,12 @@ const updateUser = async (req, res) => {
     storeName: storeName || "",
     address: address || "",
     birthdate: birthdate || "",
-    image: toStr,
+    // image: toStr,
+  }
+
+  if (fileUpload) {
+    avatar = toStr
+    data.image = avatar
   }
 
   userModel.updateUser(id, data)
@@ -170,16 +184,24 @@ const updateUser = async (req, res) => {
 
 const updateUserCustomer = async (req, res) => {
   const id = req.params.id
+  let avatar = ""
+  // let ava = ""
+  let fileUpload = ""
+  let toStr = ""
+
   const { username, email, phoneNumber, image, address, birthdate } = req.body
-  console.log(req.file)
-  const fileUpload = req.file;
+  // console.log(req.file)
   
+  if (!req.file) {
+    fileUpload = ""
+  } else {
+    fileUpload = req.file;
+    const images = [];
+    const { path } = fileUpload;
+    images.push(path);
+    toStr = await images.toString()
+  }
 
-  const images = [];
-  const { path } = fileUpload;
-  images.push(path);
-
-  const toStr = await images.toString();
   const data = {
     username,
     email,
@@ -187,7 +209,12 @@ const updateUserCustomer = async (req, res) => {
     // storeName,
     address,
     birthdate,
-    image: toStr,
+    // image: toStr,
+  }
+
+  if (fileUpload) {
+    avatar = toStr
+    data.image = avatar
   }
 
   userModel.updateUserCustomer(id, data)

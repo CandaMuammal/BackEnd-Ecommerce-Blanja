@@ -235,7 +235,7 @@ const getUserById = (req, res, next) => {
   const idUser = req.params.id
   userModel.getUserById(idUser)
     .then((result) => {
-      const user = result
+      const user = result[0]
       helpers.responseGet(res, user, 200, null)
     })
     .catch((error) => {

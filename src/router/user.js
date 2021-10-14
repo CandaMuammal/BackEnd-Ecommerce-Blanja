@@ -6,7 +6,7 @@ const images = require('../middlewares/multer')
 
 router
   .get('/', userController.getAllUser)
-  // .get('/:id', userController.getUserById)
+  .get('/:id', userController.getUserById)
   // .post('/', userController.insertUser)
   // .put('/:id', userController.updateUser)
   .put('/:id', images.single('image'), userController.updateUser)

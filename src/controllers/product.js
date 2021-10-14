@@ -13,7 +13,7 @@ cloudinary.config(configCloudinary);
 
 const getAllProduct = (req, res, next) => {
   const page = req.query.page || 1
-  const limit = req.query.limit || 10
+  const limit = req.query.limit || 20
   const start = (page - 1) * limit
   const search = req.query.search || ""
 

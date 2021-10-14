@@ -132,41 +132,45 @@ const insertProduct = async (req, res, next) => {
 
 const updateProduct = async (req, res) => {
   const id = req.params.id
+
+  let pic = ""
+  // let ava = ""
+  let fileUpload = ""
+  let toStr = ""
+
   const { name, price, color, size, category, idCategory, image, stock, description } = req.body
-  console.log(req.file)
-  const fileUpload = req.file;
 
-  const images = [];
-  const { path } = fileUpload;
-  images.push(path);
+  // console.log(req.file)
 
-  const toStr = await images.toString();
-  const data = {
+
+  if (!req.file) {
+    fileUpload = ""
+  } else {
+    fileUpload = req.file;
+    const images = [];
+    const { path } = fileUpload;
+    images.push(path);
+    toStr = await images.toString()
+  }
+
+  let data = {}
+   data = {
     name: name,
     price: price,
     color,
     size,
     category,
     idCategory: 1,
-    image: toStr,
+    // image: toStr,
     stock: stock,
     description,
     createdAt: new Date()
   }
 
-  // const { name, price, color, size, idCategory, image, stock, description, category } = req.body
-  // const data = {
-  //   name: name,
-  //   price: price,
-  //   color: color,
-  //   size: size,
-  //   idCategory: idCategory,
-  //   category,
-  //   image: `http://localhost:4000/file/${req.file.filename}`,
-  //   stock: stock,
-  //   description,
-  //   createdAt: new Date()
-  // }
+  if (fileUpload) {
+    pic = toStr
+    data.image = pic
+  }
   productModel.updateProduct(id, data)
     .then((result) => {
       const product = result

@@ -231,6 +231,19 @@ const updateUserCustomer = async (req, res) => {
     })
 }
 
+const getUserById = (req, res, next) => {
+  const idUser = req.params.id
+  userModel.getUserById(idUser)
+    .then((result) => {
+      const user = result
+      helpers.responseGet(res, user, 200, null)
+    })
+    .catch((error) => {
+      const err = new createError.InternalServerError()
+      next(err)
+    })
+}
+
 module.exports = {
   updateUser,
   updateUserCustomer,
@@ -238,6 +251,7 @@ module.exports = {
   registerCustomer,
   login,
   getAllUser,
+  getUserById,
   sendEmail
 }
 

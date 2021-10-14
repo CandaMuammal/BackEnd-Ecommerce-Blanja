@@ -60,8 +60,21 @@ const updateUserCustomer = (id, data) => {
   })
 }
 
+const getUserById = (id) => {
+  return new Promise((resolve, reject) => {
+    connection.query('SELECT * FROM user WHERE id = ?', id, (error, result) => {
+      if (!error) {
+        resolve(result)
+      } else {
+        reject(error)
+      }
+    })
+  })
+}
+
 module.exports = {
   insertUser,
+  getUserById,
   searchUser,
   getAllUser,
   updateUser,

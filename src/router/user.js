@@ -10,7 +10,7 @@ router
   // .post('/', userController.insertUser)
   // .put('/:id', userController.updateUser)
   .put('/:id', images.single('image'), userController.updateUser)
-  // .put('/customer/:id', images.single('image'), userController.updateUserCustomer)
+  .put('/seller/:id', images.single('image'), userController.updateUserSeller)
   // .delete('/:id', userController.deleteUser) 
   .post('/registerSeller', userController.registerSeller)
   .post('/registerCustomer', userController.registerCustomer)

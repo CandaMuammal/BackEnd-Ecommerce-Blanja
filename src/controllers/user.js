@@ -182,7 +182,7 @@ const updateUser = async (req, res) => {
     })
 }
 
-const updateUserCustomer = async (req, res) => {
+const updateUserSeller = async (req, res) => {
   const id = req.params.id
   let avatar = ""
   // let ava = ""
@@ -206,9 +206,9 @@ const updateUserCustomer = async (req, res) => {
     username,
     email,
     phoneNumber,
-    // storeName,
-    address,
-    birthdate,
+    storeName,
+    // address,
+    // birthdate,
     // image: toStr,
   }
 
@@ -217,7 +217,7 @@ const updateUserCustomer = async (req, res) => {
     data.image = avatar
   }
 
-  userModel.updateUserCustomer(id, data)
+  userModel.updateUserSeller(id, data)
     .then(() => {
       res.json({
         data
@@ -246,7 +246,7 @@ const getUserById = (req, res, next) => {
 
 module.exports = {
   updateUser,
-  updateUserCustomer,
+  updateUserSeller,
   registerSeller,
   registerCustomer,
   login,

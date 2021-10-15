@@ -202,6 +202,8 @@ const updateUser = async (req, res) => {
     toStr = await images.toString()
   }
 
+  let update =""
+
   const data = {
     username,
     email,
@@ -211,7 +213,7 @@ const updateUser = async (req, res) => {
     birthdate,
     // image: toStr,
   }
-
+s
   if (fileUpload) {
     avatar = toStr
     data.image = avatar

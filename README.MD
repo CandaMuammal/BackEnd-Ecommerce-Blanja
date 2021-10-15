@@ -3,6 +3,16 @@
 
 </p>
 
+<p align="center">
+    <br />
+    <br />
+    <br />
+    <a href="https://fe-ecommerce-blanja.vercel.app/login">View Demo</a>
+    ·
+    <a href="https://github.com/CandaMuammal/BackEnd-Ecommerce-Blanja/issues">Report Bug</a>
+    ·
+  </p>
+
 
 ---
 

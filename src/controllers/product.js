@@ -1,10 +1,6 @@
 const productModel = require('../models/product')
 const helpers = require('../helpers/helper')
 const createError = require('http-errors')
-
-// const fs = require('fs')
-// const redis = require('redis')
-// const client = redis.createClient(6379)
 const cloudinary = require('cloudinary').v2;
 const { configCloudinary } = require('../middlewares/cloudinary');
 const path = require("path");
@@ -82,27 +78,42 @@ const getProductByCategory = (req, res, next) => {
 
 const insertProduct = async (req, res, next) => {
 
+  let pic = ""
+  // let ava = ""
+  let fileUpload = ""
+  let toStr = ""
+
   const { name, price, color, size, category, idCategory, image, stock, description } = req.body
-  console.log(req.file)
-  const fileUpload = req.file;
 
-  const images = [];
-  const { path } = fileUpload;
-  images.push(path);
+  if (!req.file) {
+    fileUpload = ""
+  } else {
+    fileUpload = req.file;
+    const images = [];
+    const { path } = fileUpload;
+    images.push(path);
+    toStr = await images.toString()
+  }
 
-  const toStr = await images.toString();
-  const data = {
+  let data = {}
+   data = {
     name: name,
     price: price,
     color,
     size,
     category,
     idCategory: 1,
-    image: toStr,
+    // image: toStr,
     stock: stock,
     description,
     createdAt: new Date()
   }
+
+  if (fileUpload) {
+    pic = toStr
+    data.image = pic
+  }
+ 
 
   productModel.insertProduct(data)
     .then((result) => {

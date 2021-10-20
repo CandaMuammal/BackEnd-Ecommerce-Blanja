@@ -10,7 +10,7 @@ router
 // .get('/products', productController.getAllProductByName)
   // .get('/', redisCache.hitCacheAllProduct, productController.getAllProduct)
   .get('/',  productController.getAllProduct)
-  .get('/:category', productController.getProductByCategory)
+  .get('/products/:category', productController.getProductByCategory)
 
   // .get('/:id',  redisCache.hitCacheProductId, productController.getProductById)
   .get('/:id',  productController.getProductById)

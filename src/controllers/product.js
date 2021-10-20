@@ -68,7 +68,7 @@ const getProductById = (req, res, next) => {
 
 const getProductByCategory = (req, res, next) => {
   const categoryProduct = req.params.category
-  productModel.getProductById(categoryProduct)
+  productModel.getProductByCategory(categoryProduct)
     .then((result) => {
       const product = result
       // client.setex(`product/${idProduct}`, 60 * 60, JSON.stringify(product))

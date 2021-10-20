@@ -55,6 +55,7 @@ const getProductById = (req, res, next) => {
   const idProduct = req.params.id
   productModel.getProductById(idProduct)
     .then((result) => {
+      // const product = result
       const product = result[0]
       // client.setex(`product/${idProduct}`, 60 * 60, JSON.stringify(product))
       helpers.responseGet(res, product, 200, null)

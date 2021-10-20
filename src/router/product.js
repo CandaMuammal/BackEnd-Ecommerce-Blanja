@@ -10,6 +10,8 @@ router
 // .get('/products', productController.getAllProductByName)
   // .get('/', redisCache.hitCacheAllProduct, productController.getAllProduct)
   .get('/',  productController.getAllProduct)
+  .get('/:category', productController.getProductByCategory)
+
   // .get('/:id',  redisCache.hitCacheProductId, productController.getProductById)
   .get('/:id',  productController.getProductById)
   .post('/', images.single('image'), productController.insertProduct)

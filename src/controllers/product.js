@@ -65,6 +65,20 @@ const getProductById = (req, res, next) => {
     })
 }
 
+const getProductByCategory = (req, res, next) => {
+  const categoryProduct = req.params.category
+  productModel.getProductById(categoryProduct)
+    .then((result) => {
+      const product = result
+      // client.setex(`product/${idProduct}`, 60 * 60, JSON.stringify(product))
+      helpers.responseGet(res, product, 200, null)
+    })
+    .catch((error) => {
+      const err = new createError.InternalServerError()
+      next(err)
+    })
+}
+
 const insertProduct = async (req, res, next) => {
 
   const { name, price, color, size, category, idCategory, image, stock, description } = req.body
@@ -200,5 +214,6 @@ module.exports = {
   getProductById,
   insertProduct,
   updateProduct,
-  deleteProduct
+  deleteProduct,
+  getProductByCategory
 }

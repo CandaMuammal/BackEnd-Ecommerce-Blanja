@@ -246,6 +246,8 @@ const getUserById = (req, res, next) => {
     })
 }
 
+
+
 module.exports = {
   updateUser,
   updateUserSeller,

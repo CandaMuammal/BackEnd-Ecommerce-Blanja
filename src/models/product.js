@@ -38,6 +38,18 @@ const getAllProductByName = (start, limit, search) => {
   })
 }
 
+const getProductByCategory = (category) => {
+  return new Promise((resolve, reject) => {
+    connection.query('SELECT * FROM product WHERE category = ?', category, (error, result) => {
+      if (!error) {
+        resolve(result)
+      } else {
+        reject(error)
+      }
+    })
+  })
+}
+
 const getProductById = (id) => {
   return new Promise((resolve, reject) => {
     connection.query('SELECT * FROM product WHERE id = ?', id, (error, result) => {
@@ -92,5 +104,6 @@ module.exports = {
   getProductById,
   insertProduct,
   updateProduct,
-  deleteProduct
+  deleteProduct,
+  getProductByCategory
 }

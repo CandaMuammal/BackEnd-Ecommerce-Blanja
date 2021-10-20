@@ -70,9 +70,12 @@ const getProductByCategory = (req, res, next) => {
   const categoryProduct = req.params.category
   productModel.getProductByCategory(categoryProduct)
     .then((result) => {
-      const product = result
-      // client.setex(`product/${idProduct}`, 60 * 60, JSON.stringify(product))
-      helpers.responseGet(res, product, 200, null)
+      // const product = result
+      // // client.setex(`product/${idProduct}`, 60 * 60, JSON.stringify(product))
+      // helpers.responseGet(res, product, 200, null)
+      res.json({
+        data
+      })
     })
     .catch((error) => {
       const err = new createError.InternalServerError()

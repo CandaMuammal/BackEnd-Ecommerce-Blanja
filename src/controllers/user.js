@@ -13,13 +13,14 @@ const { images } = require('../middlewares/multer')
 cloudinary.config(configCloudinary);
 
 const registerSeller = async (req, res, next) => {
-  const { username, email, password, phoneNumber, role, storeName } = req.body
+  const { username, email, password, phoneNumber, role, storeName, image } = req.body
 
   const user = await userModel.searchUser(email)
   if (user.length > 0) {
     return helpers.responseInsert(res, null, 401, { message: 'email already exist' })
   }
   // console.log(user);
+  const defaultPic = "https://res.cloudinary.com/syobon/image/upload/v1633314283/Telegram/tsqn1kecnbovsdir5fxs.png"
   bcrypt.genSalt(15, function (err, salt) {
     bcrypt.hash(password, salt, function (err, hash) {
       // console.log(hash);
@@ -30,7 +31,8 @@ const registerSeller = async (req, res, next) => {
         password: hash,
         phoneNumber: phoneNumber,
         storeName: storeName,
-        role: "1"
+        role: "1",
+        image: defaultPic
       }
 
       userModel.insertUser(data)
@@ -49,13 +51,14 @@ const registerSeller = async (req, res, next) => {
 }
 
 const registerCustomer = async (req, res, next) => {
-  const { username, email, password, phoneNumber, role } = req.body
+  const { username, email, password, phoneNumber, role, image } = req.body
 
   const user = await userModel.searchUser(email)
   if (user.length > 0) {
     return helpers.responseInsert(res, null, 401, { message: 'email already exist' })
   }
   // console.log(user);
+  const defaultPic = "https://res.cloudinary.com/syobon/image/upload/v1633314283/Telegram/tsqn1kecnbovsdir5fxs.png"
   bcrypt.genSalt(15, function (err, salt) {
     bcrypt.hash(password, salt, function (err, hash) {
       // console.log(hash);
@@ -65,7 +68,8 @@ const registerCustomer = async (req, res, next) => {
         email: email,
         password: hash,
         phoneNumber: 0,
-        role: "2"
+        role: "2",
+        image: defaultPic
       }
 
       userModel.insertUser(data)

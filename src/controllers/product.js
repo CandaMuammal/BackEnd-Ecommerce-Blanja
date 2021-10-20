@@ -103,16 +103,16 @@ const insertProduct = async (req, res, next) => {
     size,
     category,
     idCategory: 1,
-    // image: toStr,
+    image: toStr,
     stock: stock,
     description,
     createdAt: new Date()
   }
 
-  if (fileUpload) {
-    pic = toStr
-    data.image = pic
-  }
+  // if (fileUpload) {
+  //   pic = toStr
+  //   data.image = pic
+  // }
  
 
   productModel.insertProduct(data)

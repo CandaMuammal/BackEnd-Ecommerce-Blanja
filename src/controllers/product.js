@@ -79,7 +79,7 @@ const getProductByCategory = (req, res, next) => {
 const insertProduct = async (req, res, next) => {
 
   let pic = ""
-  // let ava = ""
+  let ava = ""
   let fileUpload = ""
   let toStr = ""
 
@@ -87,7 +87,7 @@ const insertProduct = async (req, res, next) => {
 
   if (!req.file) {
     fileUpload = ""
-  } else {
+  } else { 
     fileUpload = req.file;
     const images = [];
     const { path } = fileUpload;

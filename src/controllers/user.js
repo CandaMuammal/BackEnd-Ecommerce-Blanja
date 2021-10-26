@@ -217,7 +217,7 @@ const updateUser = async (req, res) => {
     birthdate,
     // image: toStr,
   }
-s
+
   if (fileUpload) {
     avatar = toStr
     data.image = avatar
